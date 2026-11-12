@@ -1,0 +1,93 @@
+# Python cache and virtual environments
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.venv/
+venv/
+venv*/
+ENV/
+
+# IDE and editor temporary files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.tmp
+*.bak
+*.orig
+
+# Environment secrets
+.env
+.env.*
+!.env.example
+!.env.sample
+*.pem
+*.key
+secrets/
+
+# Datasets and large raw data
+*.csv
+*.log
+*.bin
+*.dat
+*.npy
+*.npz
+*.h5
+*.hdf5
+*.parquet
+*.tar
+*.gz
+*.zip
+
+# Large raw and processed data directories
+data/raw/*
+!data/raw/.gitkeep
+
+data/processed/*
+!data/processed/.gitkeep
+
+data/labeled/*
+!data/labeled/.gitkeep
+
+# Model artifacts
+models/*.pt
+models/*.pth
+models/*.onnx
+models/*.ckpt
+models/*.joblib
+models/*.pkl
+models/*.h5
+models/*.hdf5
+models/*.bin
+model_checkpoints/
+
+# Build artifacts
+build/
+dist/
+out/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+coverage/
+htmlcov/
+
+# Local runtime output
+logs/
+*.sqlite3
+
+# Keep documentation and source files tracked
+!README.md
+!AGENTS.md
+!PRD.md
+!roadmap.md
+!changelog.md
+!docs/**
+!references/**
+!firmware/**
+!processing/**
+!backend/**
+!mobile/**
+!tests/**
+!models/README.md
