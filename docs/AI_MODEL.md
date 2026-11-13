@@ -78,3 +78,9 @@ Kinerja model harus dilaporkan apa adanya, termasuk kondisi di mana data terbata
 - Jangan mengarang hasil eksperimen atau performa model yang belum ada.
 
 Semua keputusan model akan diperbarui berdasarkan eksperimen nyata dan dokumentasi yang telah diverifikasi.
+
+## 8. Status eksperimen baseline
+
+Eksperimen baseline awal pada feature matrix WiCount 50-sample telah dijalankan dengan Logistic Regression, Random Forest, dan RBF-SVM. Validasi memakai Leave-One-Recording-Out terbatas pada recording kelas 1 dan 2; recording kelas 0 dan 3 selalu berada di training dan tidak memiliki true validation samples. Hasilnya merupakan pilot pada dataset eksternal, bukan evaluasi generalisasi empat kelas atau hasil pengujian ESP32 WiFiSENSE.
+
+Rincian konfigurasi, fold, metrik, error, dan batasan tersedia pada `ML_BASELINE_EXPERIMENT.md`. Sebelum klaim model yang lebih kuat, kumpulkan sesi independen untuk setiap kelas dan lakukan evaluasi group-based pada data yang sesuai dengan hardware WiFiSENSE.

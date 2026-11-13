@@ -1,0 +1,35 @@
+{
+  "python": "3.14.7",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "scikit_learn": "1.9.1",
+  "numpy": "2.5.2",
+  "pandas": "3.0.5",
+  "random_state": 42,
+  "fold_count": 13,
+  "folds_by_heldout_class": {
+    "1": 7,
+    "2": 6
+  },
+  "feature_counts": {
+    "full": 992,
+    "compact": 211
+  },
+  "models": [
+    "Logistic Regression",
+    "Random Forest",
+    "RBF-SVM"
+  ],
+  "model_settings": {
+    "logistic_regression": "C=1.0, solver=lbfgs, max_iter=2000, class_weight=balanced, random_state=42; StandardScaler in fold pipeline",
+    "random_forest": "n_estimators=100, max_features=sqrt, class_weight=balanced_subsample, random_state=42, n_jobs=1; no scaler",
+    "rbf_svm": "C=1.0, gamma=scale, class_weight=balanced; StandardScaler in fold pipeline"
+  },
+  "validation_scope": "OOF recording-level holdout for classes 1 and 2 only; classes 0 and 3 always train-only",
+  "protected_sha256_before_and_after": {
+    "feature_matrix_50.csv": "1471b768656afe8bd5b4b3db8cd9c2c2c012e33c3287963a39c0f540703a141c",
+    "feature_reduction_recommendation.csv": "7192b90fed722390804dfaf004800d157c386c6f6c184b4d007c5d03e9f1c24e",
+    "WiCount.zip": "d578ba4ec4d64ef7089e0fa5c8b47498a76fce5f7d32fb7c7f7f994235915ae1",
+    "PRD.md": "b97e85a201b7e45b0b11e8a700d4a728be7720ac186844c1bf7df023e18f2fad"
+  },
+  "model_training_performed": true
+}

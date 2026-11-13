@@ -40,7 +40,8 @@ Dokumen ini merangkum roadmap tiga minggu yang sesuai dengan PRD. Status menggun
 | Evaluasi DSP dan feature engineering pada WiCount | Completed | Preprocessing dan fitur dianalisis pada seluruh rekaman | Filter, normalisasi, windowing, dan matriks fitur disimpan sebagai artifacts analisis |
 | Quality assurance pada fitur CSI, timestamp, redundansi, dan PCA | Completed | Audit kualitas preprocessing selesai | Notebook QA, plot, dan dokumen audit kualitas selesai; tidak ada training model |
 | Validasi akhir dataset dan kesiapan ML | Completed | Kelayakan timestamp, fitur, dan group validation diperiksa | Timestamp/sequence diaudit dalam urutan asli, baseline fitur tidak diubah, rekomendasi reduksi dan keterbatasan evaluasi didokumentasikan; tidak ada training model |
-| Model baseline | Not Started | Baseline model siap untuk prediksi | Metrik evaluasi awal tersedia |
+| Eksperimen baseline ML WiCount terbatas | Completed | Perbandingan baseline awal tersedia | Tiga model dan dua skenario fitur dievaluasi pada 13 recording-level holdout untuk kelas 1 dan 2; kelas 0 dan 3 tetap training-only, bukan evaluasi empat kelas |
+| Evaluasi independen empat kelas pada data WiFiSENSE | Not Started | Generalisasi semua kelas dapat diuji | Kumpulkan recording independen per kelas dari sesi/hardware WiFiSENSE, lalu evaluasi dengan split berbasis recording |
 
 ### Milestone Minggu 2
 

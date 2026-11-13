@@ -22,6 +22,8 @@
 - Generated artifacts for signal filtering, feature analysis, and windowing under `analysis/outputs` and `analysis/processed` without moving into ML training.
 - CSI quality-assurance notebook and report covering feature-definition validation, duplicate timestamp analysis, redundancy review, PCA standardization, and leakage-safe split guidance; no ML training.
 - Final WiCount dataset validation notebook and report, including original-row-order timestamp/sequence audit, non-destructive feature reduction recommendations, group-split feasibility, preprocessing leakage review, and generated validation plots; no ML training.
+- Limited WiCount ML baseline experiment with 13 recording-level holdout folds for classes 1 and 2, comparing full and frozen compact features across Logistic Regression, Random Forest, and RBF-SVM; OOF metrics and error artifacts generated.
+- Added pinned scikit-learn 1.9.1 to analysis requirements for the requested baseline classifiers, plus experiment documentation and roadmap status updates; no ESP32, backend, or mobile implementation.
 
 ### Planned
 
