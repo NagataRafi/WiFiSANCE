@@ -20,6 +20,8 @@
 - Deep descriptive CSI analysis of all 15 WiCount recordings, including session/class statistics, quality checks, six figures, and grouped-split leakage guidance; no ML training.
 - DSP and feature-engineering notebook covering filter comparison, normalization review, windowing experiments, and feature matrix export on the full WiCount archive.
 - Generated artifacts for signal filtering, feature analysis, and windowing under `analysis/outputs` and `analysis/processed` without moving into ML training.
+- CSI quality-assurance notebook and report covering feature-definition validation, duplicate timestamp analysis, redundancy review, PCA standardization, and leakage-safe split guidance; no ML training.
+- Final WiCount dataset validation notebook and report, including original-row-order timestamp/sequence audit, non-destructive feature reduction recommendations, group-split feasibility, preprocessing leakage review, and generated validation plots; no ML training.
 
 ### Planned
 

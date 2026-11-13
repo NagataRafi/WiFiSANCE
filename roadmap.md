@@ -38,6 +38,8 @@ Dokumen ini merangkum roadmap tiga minggu yang sesuai dengan PRD. Status menggun
 | Visualisasi CSI awal dari WiCount | Completed | Notebook eksplorasi dapat dijalankan | Notebook menggunakan CSV asli untuk 2D dan 3D; gambar output tersimpan |
 | Analisis mendalam seluruh rekaman WiCount | Completed | Statistik sesi/kelas dan kualitas CSI terdokumentasi | Seluruh 15 CSV dianalisis, visualisasi lintas sesi dibuat, risiko leakage dicatat; tanpa training model |
 | Evaluasi DSP dan feature engineering pada WiCount | Completed | Preprocessing dan fitur dianalisis pada seluruh rekaman | Filter, normalisasi, windowing, dan matriks fitur disimpan sebagai artifacts analisis |
+| Quality assurance pada fitur CSI, timestamp, redundansi, dan PCA | Completed | Audit kualitas preprocessing selesai | Notebook QA, plot, dan dokumen audit kualitas selesai; tidak ada training model |
+| Validasi akhir dataset dan kesiapan ML | Completed | Kelayakan timestamp, fitur, dan group validation diperiksa | Timestamp/sequence diaudit dalam urutan asli, baseline fitur tidak diubah, rekomendasi reduksi dan keterbatasan evaluasi didokumentasikan; tidak ada training model |
 | Model baseline | Not Started | Baseline model siap untuk prediksi | Metrik evaluasi awal tersedia |
 
 ### Milestone Minggu 2
