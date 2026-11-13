@@ -1,0 +1,72 @@
+<mxfile host="app.diagrams.net" modified="2026-11-12T05:00:00.000Z" agent="ChatGPT" version="24.7.17" type="device">
+  <diagram id="wifi-sense-one-page" name="WiFiSENSE Block Diagram">
+    <mxGraphModel dx="1600" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="title" value="WiFiSENSE — SYSTEM BLOCK DIAGRAM" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=26;fontStyle=1;fontColor=#172554;" vertex="1" parent="1">
+          <mxGeometry x="300" y="35" width="1000" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="subtitle" value="Wi-Fi Channel State Information (CSI) Based Human Occupancy Estimation" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=14;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="300" y="88" width="1000" height="30" as="geometry"/>
+        </mxCell>
+
+        <!-- Hardware group -->
+        <mxCell id="g_hw" value="1. HARDWARE &amp; CSI SIGNAL" style="swimlane;html=1;startSize=38;horizontal=1;rounded=1;arcSize=12;fillColor=#EFF6FF;swimlaneFillColor=#DBEAFE;strokeColor=#2563EB;fontColor=#1E3A8A;fontStyle=1;fontSize=16;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="45" y="190" width="340" height="420" as="geometry"/>
+        </mxCell>
+        <mxCell id="tx" value="&lt;b&gt;ESP32 TX&lt;/b&gt;&lt;br&gt;Wi-Fi Transmitter&lt;br&gt;&lt;font color=&quot;#475569&quot;&gt;Mengirim paket / sinyal Wi-Fi&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#3B82F6;strokeWidth=2;fontSize=14;fontColor=#1E3A8A;spacing=10;" vertex="1" parent="g_hw">
+          <mxGeometry x="25" y="75" width="130" height="95" as="geometry"/>
+        </mxCell>
+        <mxCell id="room" value="&lt;b&gt;AREA PENGAMATAN&lt;/b&gt;&lt;br&gt;Propagasi Sinyal Wi-Fi&lt;br&gt;&lt;font color=&quot;#475569&quot;&gt;Perubahan kanal akibat kondisi ruangan dan keberadaan manusia&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#3B82F6;strokeWidth=2;fontSize=13;fontColor=#1E3A8A;spacing=8;" vertex="1" parent="g_hw">
+          <mxGeometry x="25" y="215" width="290" height="95" as="geometry"/>
+        </mxCell>
+        <mxCell id="rx" value="&lt;b&gt;ESP32 RX&lt;/b&gt;&lt;br&gt;CSI Receiver&lt;br&gt;&lt;font color=&quot;#475569&quot;&gt;Menerima paket dan mengambil data CSI&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#3B82F6;strokeWidth=2;fontSize=14;fontColor=#1E3A8A;spacing=10;" vertex="1" parent="g_hw">
+          <mxGeometry x="185" y="75" width="130" height="95" as="geometry"/>
+        </mxCell>
+        <mxCell id="tx_room" value="Sinyal Wi-Fi" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2563EB;strokeWidth=2;endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#EFF6FF;" edge="1" parent="g_hw" source="tx" target="room"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="room_rx" value="Sinyal diterima" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2563EB;strokeWidth=2;endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#EFF6FF;" edge="1" parent="g_hw" source="room" target="rx"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="160" y="355"/><mxPoint x="250" y="355"/></Array></mxGeometry></mxCell>
+
+        <!-- DSP group -->
+        <mxCell id="g_dsp" value="2. DATA ACQUISITION &amp; DIGITAL SIGNAL PROCESSING" style="swimlane;html=1;startSize=52;horizontal=1;rounded=1;arcSize=12;fillColor=#F5F3FF;swimlaneFillColor=#EDE9FE;strokeColor=#7C3AED;fontColor=#4C1D95;fontStyle=1;fontSize=15;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="425" y="190" width="350" height="420" as="geometry"/>
+        </mxCell>
+        <mxCell id="acq" value="&lt;b&gt;CSI ACQUISITION&lt;/b&gt;&lt;br&gt;Pengambilan data CSI&lt;br&gt;&lt;font color=&quot;#475569&quot;&gt;Ekstraksi informasi kanal dari ESP32 RX&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#8B5CF6;strokeWidth=2;fontSize=13;fontColor=#4C1D95;spacing=8;" vertex="1" parent="g_dsp"><mxGeometry x="25" y="85" width="300" height="75" as="geometry"/></mxCell>
+        <mxCell id="prep" value="&lt;b&gt;PREPROCESSING&lt;/b&gt;&lt;br&gt;Validasi, parsing, dan filtering noise" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#8B5CF6;strokeWidth=2;fontSize=13;fontColor=#4C1D95;spacing=8;" vertex="1" parent="g_dsp"><mxGeometry x="25" y="195" width="300" height="65" as="geometry"/></mxCell>
+        <mxCell id="feat" value="&lt;b&gt;FEATURE EXTRACTION&lt;/b&gt;&lt;br&gt;Ekstraksi fitur amplitudo dan statistik" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#8B5CF6;strokeWidth=2;fontSize=13;fontColor=#4C1D95;spacing=8;" vertex="1" parent="g_dsp"><mxGeometry x="25" y="295" width="300" height="65" as="geometry"/></mxCell>
+        <mxCell id="e_acq_prep" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#7C3AED;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="g_dsp" source="acq" target="prep"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_prep_feat" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#7C3AED;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="g_dsp" source="prep" target="feat"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- AI group -->
+        <mxCell id="g_ai" value="3. ARTIFICIAL INTELLIGENCE" style="swimlane;html=1;startSize=38;horizontal=1;rounded=1;arcSize=12;fillColor=#FFF7ED;swimlaneFillColor=#FFEDD5;strokeColor=#EA580C;fontColor=#9A3412;fontStyle=1;fontSize=16;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="815" y="190" width="300" height="420" as="geometry"/>
+        </mxCell>
+        <mxCell id="model" value="&lt;b&gt;MACHINE LEARNING&lt;/b&gt;&lt;br&gt;Model klasifikasi / estimasi&lt;br&gt;&lt;font color=&quot;#475569&quot;&gt;Model dilatih menggunakan dataset berlabel&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#F97316;strokeWidth=2;fontSize=13;fontColor=#9A3412;spacing=9;" vertex="1" parent="g_ai"><mxGeometry x="25" y="115" width="250" height="95" as="geometry"/></mxCell>
+        <mxCell id="count" value="&lt;b&gt;OCCUPANCY ESTIMATION&lt;/b&gt;&lt;br&gt;Estimasi jumlah manusia&lt;br&gt;&lt;font color=&quot;#475569&quot;&gt;Output: jumlah / kelas okupansi&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#F97316;strokeWidth=2;fontSize=13;fontColor=#9A3412;spacing=9;" vertex="1" parent="g_ai"><mxGeometry x="25" y="270" width="250" height="90" as="geometry"/></mxCell>
+        <mxCell id="e_model_count" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#EA580C;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="g_ai" source="model" target="count"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- Application group -->
+        <mxCell id="g_app" value="4. APPLICATION &amp; DATA" style="swimlane;html=1;startSize=38;horizontal=1;rounded=1;arcSize=12;fillColor=#F0FDF4;swimlaneFillColor=#DCFCE7;strokeColor=#16A34A;fontColor=#14532D;fontStyle=1;fontSize=16;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="1155" y="190" width="400" height="420" as="geometry"/>
+        </mxCell>
+        <mxCell id="api" value="&lt;b&gt;BACKEND API&lt;/b&gt;&lt;br&gt;Menerima dan menyediakan hasil estimasi" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#22C55E;strokeWidth=2;fontSize=13;fontColor=#14532D;spacing=8;" vertex="1" parent="g_app"><mxGeometry x="25" y="85" width="165" height="75" as="geometry"/></mxCell>
+        <mxCell id="db" value="&lt;b&gt;DATABASE&lt;/b&gt;&lt;br&gt;Data pengukuran dan riwayat" style="shape=cylinder;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;fillColor=#FFFFFF;strokeColor=#22C55E;strokeWidth=2;fontSize=12;fontColor=#14532D;spacing=7;" vertex="1" parent="g_app"><mxGeometry x="225" y="85" width="145" height="75" as="geometry"/></mxCell>
+        <mxCell id="mobile" value="&lt;b&gt;MOBILE APPLICATION&lt;/b&gt;&lt;br&gt;Dashboard pemantauan&lt;br&gt;&lt;font color=&quot;#475569&quot;&gt;Menampilkan estimasi dan riwayat okupansi&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#22C55E;strokeWidth=2;fontSize=13;fontColor=#14532D;spacing=8;" vertex="1" parent="g_app"><mxGeometry x="25" y="245" width="345" height="90" as="geometry"/></mxCell>
+        <mxCell id="e_api_db" value="Simpan / ambil data" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#16A34A;strokeWidth=2;startArrow=block;startFill=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#F0FDF4;" edge="1" parent="g_app" source="api" target="db"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_api_mobile" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#16A34A;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="g_app" source="api" target="mobile"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- Cross-group data flow -->
+        <mxCell id="e_rx_acq" value="Data CSI" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#475569;strokeWidth=2;endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="rx" target="acq"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_feat_model" value="Fitur CSI" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#475569;strokeWidth=2;endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="feat" target="model"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_count_api" value="Hasil estimasi" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#475569;strokeWidth=2;endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="count" target="api"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <mxCell id="note" value="Catatan: Arsitektur utama menggunakan dua ESP32 (TX dan RX) tanpa router eksternal. HC-SR04 tidak termasuk jalur utama; hanya opsi pembanding/alternatif eksperimen. Estimasi jumlah manusia memerlukan dataset CSI dengan ground truth jumlah penghuni." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#CBD5E1;fontColor=#334155;fontSize=12;align=left;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="100" y="680" width="1400" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="footer" value="WiFiSENSE | IoT + Digital Signal Processing + Artificial Intelligence + Mobile Application" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontColor=#64748B;" vertex="1" parent="1">
+          <mxGeometry x="250" y="800" width="1100" height="25" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

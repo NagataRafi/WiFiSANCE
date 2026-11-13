@@ -27,7 +27,7 @@ Komponen utama dalam repositori ini dipisahkan berdasarkan fungsi:
 
 ## Status Pengembangan
 
-Status proyek saat ini adalah fondasi awal dan struktur repository. Pengembangan aktif belum mencakup firmware produksi, model AI, backend runtime, atau aplikasi mobile final.
+Status proyek saat ini mencakup fondasi repository serta eksplorasi awal dataset WiCount eksternal untuk visualisasi CSI. Dataset tersebut bukan data yang diakuisisi oleh perangkat WiFiSENSE. Firmware produksi, model AI, backend runtime, dan aplikasi mobile final belum dibuat.
 
 Segala keputusan yang belum dikonfirmasi akan tetap ditandai sebagai `TBD`.
 
@@ -78,6 +78,14 @@ WiFiSANSE/
 │   └── README.md
 ├── references/
 │   └── REPOSITORIES.md
+├── analysis/
+│   ├── dataset/
+│   │   └── WiCount/
+│   ├── notebooks/
+│   │   └── csi_visualization.ipynb
+│   ├── scripts/
+│   ├── outputs/
+│   └── requirements.txt
 └── .gitignore
 ```
 
@@ -86,8 +94,10 @@ WiFiSANSE/
 1. Baca `PRD.md` sebagai dokumen kebutuhan utama.
 2. Review `AGENTS.md` untuk aturan AI agent dan alur kerja proyek.
 3. Gunakan `roadmap.md` untuk memahami urutan pekerjaan 3 minggu.
-4. Mulai dari modul `firmware`, `processing`, dan `docs` untuk memvalidasi CSI dan format data.
-5. Hindari pembuatan firmware, model, backend, atau aplikasi final sebelum kebutuhan dan eksperimen terdokumentasi.
+4. Notebook visualisasi WiCount tersedia di `analysis/notebooks/csi_visualization.ipynb`; audit dataset ada di `docs/WICOUNT_DATASET_AUDIT.md`.
+5. Untuk memakai environment analisis, gunakan `.venv` dan dependency yang tercatat di `analysis/requirements.txt`.
+6. Mulai dari modul `firmware`, `processing`, dan `docs` untuk memvalidasi CSI dan format data milik WiFiSENSE.
+7. Hindari pembuatan firmware, model, backend, atau aplikasi final sebelum kebutuhan dan eksperimen terdokumentasi.
 
 ## Referensi Dokumentasi
 
@@ -99,6 +109,7 @@ WiFiSANSE/
 - `docs/AI_MODEL.md` — rencana dataset dan model.
 - `docs/TESTING_PLAN.md` — strategi pengujian.
 - `docs/REPOSITORY_AUDIT.md` — audit repository referensi.
+- `docs/WICOUNT_DATASET_AUDIT.md` — fakta, keterbatasan, dan kompatibilitas dataset WiCount.
 - `references/REPOSITORIES.md` — daftar repositori referensi yang perlu diaudit.
 
 ## Catatan

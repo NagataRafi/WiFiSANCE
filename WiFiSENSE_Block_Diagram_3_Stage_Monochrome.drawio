@@ -1,0 +1,71 @@
+<mxfile host="app.diagrams.net" modified="2026-11-12T00:00:00.000Z" agent="ChatGPT" version="24.7.17" type="device">
+  <diagram id="wifi-sense-3-stage" name="WiFiSENSE 3-Stage Block Diagram">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="title" value="WiFiSENSE — SYSTEM BLOCK DIAGRAM" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=22;fontStyle=1;fontColor=#111111;" vertex="1" parent="1">
+          <mxGeometry x="250" y="55" width="670" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="subtitle" value="Wi-Fi CSI Based Human Occupancy Estimation System" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontColor=#555555;" vertex="1" parent="1">
+          <mxGeometry x="250" y="95" width="670" height="25" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="input" value="INPUT" style="swimlane;html=1;rounded=1;startSize=48;horizontal=1;fillColor=#F2F2F2;swimlaneFillColor=#FFFFFF;strokeColor=#333333;strokeWidth=2;fontColor=#111111;fontSize=17;fontStyle=1;align=center;collapsible=0;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="45" y="175" width="330" height="485" as="geometry"/>
+        </mxCell>
+        <mxCell id="tx" value="ESP32 TX&#xa;Wi-Fi Transmitter" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#555555;strokeWidth=1.5;fontColor=#111111;fontSize=14;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="95" y="255" width="230" height="65" as="geometry"/>
+        </mxCell>
+        <mxCell id="room" value="Monitored Room&#xa;Wi-Fi Signal Propagation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F7F7F7;strokeColor=#555555;strokeWidth=1.5;fontColor=#111111;fontSize=14;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="95" y="355" width="230" height="75" as="geometry"/>
+        </mxCell>
+        <mxCell id="rx" value="ESP32 RX&#xa;CSI Receiver &amp; Acquisition" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#555555;strokeWidth=1.5;fontColor=#111111;fontSize=14;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="95" y="465" width="230" height="75" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="process" value="PROCESS" style="swimlane;html=1;rounded=1;startSize=48;horizontal=1;fillColor=#E5E5E5;swimlaneFillColor=#FFFFFF;strokeColor=#333333;strokeWidth=2;fontColor=#111111;fontSize=17;fontStyle=1;align=center;collapsible=0;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="420" y="175" width="330" height="485" as="geometry"/>
+        </mxCell>
+        <mxCell id="parse" value="CSI Data Parsing &amp; Validation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#555555;strokeWidth=1.5;fontColor=#111111;fontSize=14;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="470" y="245" width="230" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="dsp" value="Digital Signal Processing&#xa;Filtering &amp; Preprocessing" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F7F7F7;strokeColor=#555555;strokeWidth=1.5;fontColor=#111111;fontSize=14;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="470" y="330" width="230" height="65" as="geometry"/>
+        </mxCell>
+        <mxCell id="features" value="Feature Extraction" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#555555;strokeWidth=1.5;fontColor=#111111;fontSize=14;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="470" y="425" width="230" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="ml" value="Machine Learning&#xa;Occupancy Classification / Estimation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F7F7F7;strokeColor=#555555;strokeWidth=1.5;fontColor=#111111;fontSize=14;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="470" y="510" width="230" height="75" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="output" value="OUTPUT" style="swimlane;html=1;rounded=1;startSize=48;horizontal=1;fillColor=#D9D9D9;swimlaneFillColor=#FFFFFF;strokeColor=#333333;strokeWidth=2;fontColor=#111111;fontSize=17;fontStyle=1;align=center;collapsible=0;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="795" y="175" width="330" height="485" as="geometry"/>
+        </mxCell>
+        <mxCell id="count" value="Estimated Number of People&#xa;(Occupancy Result)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F2F2F2;strokeColor=#444444;strokeWidth=1.5;fontColor=#111111;fontSize=15;fontStyle=1;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="845" y="245" width="230" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="backend" value="Backend API &amp; Database" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#555555;strokeWidth=1.5;fontColor=#111111;fontSize=14;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="845" y="355" width="230" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="mobile" value="Mobile Application&#xa;Dashboard &amp; Monitoring" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F7F7F7;strokeColor=#555555;strokeWidth=1.5;fontColor=#111111;fontSize=14;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="845" y="455" width="230" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="result" value="Real-Time Occupancy Information" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontColor=#555555;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="845" y="555" width="230" height="30" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#333333;strokeWidth=1.7;" edge="1" parent="1" source="tx" target="room"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#333333;strokeWidth=1.7;" edge="1" parent="1" source="room" target="rx"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#333333;strokeWidth=1.7;" edge="1" parent="1" source="rx" target="parse"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="390" y="502"/><mxPoint x="390" y="272"/></Array></mxGeometry></mxCell>
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#333333;strokeWidth=1.7;" edge="1" parent="1" source="parse" target="dsp"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#333333;strokeWidth=1.7;" edge="1" parent="1" source="dsp" target="features"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#333333;strokeWidth=1.7;" edge="1" parent="1" source="features" target="ml"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#333333;strokeWidth=1.7;" edge="1" parent="1" source="ml" target="count"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="770" y="547"/><mxPoint x="770" y="280"/></Array></mxGeometry></mxCell>
+        <mxCell id="e8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#333333;strokeWidth=1.7;" edge="1" parent="1" source="count" target="backend"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#333333;strokeWidth=1.7;" edge="1" parent="1" source="backend" target="mobile"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

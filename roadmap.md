@@ -34,6 +34,9 @@ Dokumen ini merangkum roadmap tiga minggu yang sesuai dengan PRD. Status menggun
 | Preprocessing dan filtering | Not Started | Data bersih siap diproses | Parameter preprocessing terdokumentasi |
 | Ekstraksi fitur | Not Started | Fitur CSI berhasil dibuat | Fitur dapat disimpan dan diakses untuk training |
 | Pengumpulan dataset berlabel | Not Started | Dataset ground truth tersedia | Setiap sesi mencatat jumlah orang aktual, waktu, dan konfigurasi |
+| Integrasi dan audit dataset referensi WiCount | Completed | Dataset publik tersedia untuk eksplorasi awal | Arsip LFS terverifikasi, schema/label/keterbatasan dicatat; bukan pengganti dataset ESP32 WiFiSENSE |
+| Visualisasi CSI awal dari WiCount | Completed | Notebook eksplorasi dapat dijalankan | Notebook menggunakan CSV asli untuk 2D dan 3D; gambar output tersimpan |
+| Analisis mendalam seluruh rekaman WiCount | Completed | Statistik sesi/kelas dan kualitas CSI terdokumentasi | Seluruh 15 CSV dianalisis, visualisasi lintas sesi dibuat, risiko leakage dicatat; tanpa training model |
 | Model baseline | Not Started | Baseline model siap untuk prediksi | Metrik evaluasi awal tersedia |
 
 ### Milestone Minggu 2
@@ -73,7 +76,7 @@ Dokumen ini merangkum roadmap tiga minggu yang sesuai dengan PRD. Status menggun
 ## Ringkasan Status Proyek
 
 - Minggu 1: `In Progress`
-- Minggu 2: `Not Started`
+- Minggu 2: `In Progress`
 - Minggu 3: `Not Started`
 
-Semua status ini bersifat awal dan dapat berubah sesuai keputusan teknis, eksperimen, dan validasi nyata.
+Dataset WiCount adalah data referensi eksternal. Pengumpulan dataset khusus dari perangkat ESP32 TX/RX WiFiSENSE dan pengembangan model belum selesai. Semua status dapat berubah sesuai keputusan teknis, eksperimen, dan validasi nyata.
