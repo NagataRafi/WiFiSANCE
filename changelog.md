@@ -18,11 +18,12 @@
 - Analysis requirements and a project `.venv` reusing available scientific packages, with only missing Jupyter packages installed.
 - README and roadmap updated to reflect the external dataset analysis and its scope.
 - Deep descriptive CSI analysis of all 15 WiCount recordings, including session/class statistics, quality checks, six figures, and grouped-split leakage guidance; no ML training.
+- DSP and feature-engineering notebook covering filter comparison, normalization review, windowing experiments, and feature matrix export on the full WiCount archive.
+- Generated artifacts for signal filtering, feature analysis, and windowing under `analysis/outputs` and `analysis/processed` without moving into ML training.
 
 ### Planned
 
 - CSI acquisition proof of concept.
-- DSP and parser prototype.
-- Dataset labeling workflow.
+- WiFiSENSE-specific ESP32 data collection and ground-truth labeling workflow.
 - ML baseline and evaluation.
 - Backend/API and mobile presentation layer.

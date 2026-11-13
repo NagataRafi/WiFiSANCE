@@ -29,14 +29,15 @@ Dokumen ini merangkum roadmap tiga minggu yang sesuai dengan PRD. Status menggun
 
 | Item kerja | Status | Milestone | Acceptance criteria |
 |---|---|---|---|
-| Parser CSI | Not Started | Parser dapat membaca format data yang valid | File parsing dapat diproses dengan validasi sederhana |
-| Validasi data | Not Started | Data tidak valid teridentifikasi | Pencatatan error dan anomaly tersedia |
-| Preprocessing dan filtering | Not Started | Data bersih siap diproses | Parameter preprocessing terdokumentasi |
-| Ekstraksi fitur | Not Started | Fitur CSI berhasil dibuat | Fitur dapat disimpan dan diakses untuk training |
+| Parser CSI | Completed | Parser untuk WiCount dapat membaca format data valid | File parsing dapat diproses dengan validasi sederhana dan metadata rekaman tercatat |
+| Validasi data | Completed | Data tidak valid teridentifikasi | Pencatatan error dan anomaly tersedia untuk seluruh 15 rekaman |
+| Preprocessing dan filtering | Completed | Data bersih siap diproses | Parameter preprocessing dan filter terdokumentasi; filter raw, moving average, EMA, median, Savitzky-Golay dibandingkan |
+| Ekstraksi fitur | Completed | Fitur CSI berhasil dibuat | Fitur statistik dan temporal disimpan untuk berbagai ukuran window dan disertai validasi jumlah fitur |
 | Pengumpulan dataset berlabel | Not Started | Dataset ground truth tersedia | Setiap sesi mencatat jumlah orang aktual, waktu, dan konfigurasi |
 | Integrasi dan audit dataset referensi WiCount | Completed | Dataset publik tersedia untuk eksplorasi awal | Arsip LFS terverifikasi, schema/label/keterbatasan dicatat; bukan pengganti dataset ESP32 WiFiSENSE |
 | Visualisasi CSI awal dari WiCount | Completed | Notebook eksplorasi dapat dijalankan | Notebook menggunakan CSV asli untuk 2D dan 3D; gambar output tersimpan |
 | Analisis mendalam seluruh rekaman WiCount | Completed | Statistik sesi/kelas dan kualitas CSI terdokumentasi | Seluruh 15 CSV dianalisis, visualisasi lintas sesi dibuat, risiko leakage dicatat; tanpa training model |
+| Evaluasi DSP dan feature engineering pada WiCount | Completed | Preprocessing dan fitur dianalisis pada seluruh rekaman | Filter, normalisasi, windowing, dan matriks fitur disimpan sebagai artifacts analisis |
 | Model baseline | Not Started | Baseline model siap untuk prediksi | Metrik evaluasi awal tersedia |
 
 ### Milestone Minggu 2
